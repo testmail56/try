@@ -22,9 +22,16 @@
 <p></p>
 
 <script>
+const element = document.querySelector("button");
 
+// Create a new MouseEvent object
+const clickEvent = new MouseEvent('click', {
+    bubbles: true,
+    cancelable: true,
+    view: window
+})
 window.addEventListener('load', ()=>{
-        document.querySelector("button").click()
+        element.dispatchEvent(clickEvent);
     })
 
 document.getElementById("myInput").value = `
